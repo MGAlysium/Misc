@@ -48,9 +48,10 @@ Partial Class frmManBearGun
         'lblCom
         '
         Me.lblCom.AutoSize = True
+        Me.lblCom.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer), CType(CType(40, Byte), Integer))
         Me.lblCom.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblCom.ForeColor = System.Drawing.Color.Teal
-        Me.lblCom.Location = New System.Drawing.Point(59, 181)
+        Me.lblCom.Location = New System.Drawing.Point(59, 72)
         Me.lblCom.Name = "lblCom"
         Me.lblCom.Size = New System.Drawing.Size(89, 19)
         Me.lblCom.TabIndex = 0
@@ -59,9 +60,10 @@ Partial Class frmManBearGun
         'lblPlayer
         '
         Me.lblPlayer.AutoSize = True
+        Me.lblPlayer.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.lblPlayer.Font = New System.Drawing.Font("Tahoma", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPlayer.ForeColor = System.Drawing.Color.Teal
-        Me.lblPlayer.Location = New System.Drawing.Point(351, 181)
+        Me.lblPlayer.Location = New System.Drawing.Point(351, 72)
         Me.lblPlayer.Name = "lblPlayer"
         Me.lblPlayer.Size = New System.Drawing.Size(61, 19)
         Me.lblPlayer.TabIndex = 1
@@ -144,9 +146,10 @@ Partial Class frmManBearGun
         '
         'lblWinner
         '
+        Me.lblWinner.BackColor = System.Drawing.Color.FromArgb(CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer), CType(CType(35, Byte), Integer))
         Me.lblWinner.Font = New System.Drawing.Font("Tahoma", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWinner.ForeColor = System.Drawing.Color.Teal
-        Me.lblWinner.Location = New System.Drawing.Point(187, 253)
+        Me.lblWinner.Location = New System.Drawing.Point(187, 291)
         Me.lblWinner.Name = "lblWinner"
         Me.lblWinner.Size = New System.Drawing.Size(111, 23)
         Me.lblWinner.TabIndex = 12
@@ -206,18 +209,18 @@ Partial Class frmManBearGun
         Me.picTitle.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.picTitle.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.picTitle.Image = Global.ManBearGunApp.My.Resources.Resources.Man_Bear_Gun_Logo
-        Me.picTitle.Location = New System.Drawing.Point(114, 12)
+        Me.picTitle.Location = New System.Drawing.Point(-52, -8)
         Me.picTitle.Name = "picTitle"
-        Me.picTitle.Size = New System.Drawing.Size(256, 166)
+        Me.picTitle.Size = New System.Drawing.Size(588, 378)
         Me.picTitle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picTitle.TabIndex = 7
         Me.picTitle.TabStop = False
         '
         'picPlayer
         '
-        Me.picPlayer.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.picPlayer.BackColor = System.Drawing.Color.Silver
         Me.picPlayer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.picPlayer.Location = New System.Drawing.Point(299, 203)
+        Me.picPlayer.Location = New System.Drawing.Point(299, 94)
         Me.picPlayer.Name = "picPlayer"
         Me.picPlayer.Size = New System.Drawing.Size(164, 122)
         Me.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -226,9 +229,9 @@ Partial Class frmManBearGun
         '
         'picCom
         '
-        Me.picCom.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.picCom.BackColor = System.Drawing.Color.Silver
         Me.picCom.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
-        Me.picCom.Location = New System.Drawing.Point(21, 203)
+        Me.picCom.Location = New System.Drawing.Point(21, 94)
         Me.picCom.Name = "picCom"
         Me.picCom.Size = New System.Drawing.Size(164, 122)
         Me.picCom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -250,7 +253,6 @@ Partial Class frmManBearGun
         Me.Controls.Add(Me.lblTies)
         Me.Controls.Add(Me.lblWins)
         Me.Controls.Add(Me.picInfoBG)
-        Me.Controls.Add(Me.picTitle)
         Me.Controls.Add(Me.btnGun)
         Me.Controls.Add(Me.btnBear)
         Me.Controls.Add(Me.btnMan)
@@ -258,6 +260,7 @@ Partial Class frmManBearGun
         Me.Controls.Add(Me.picCom)
         Me.Controls.Add(Me.lblPlayer)
         Me.Controls.Add(Me.lblCom)
+        Me.Controls.Add(Me.picTitle)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmManBearGun"
         Me.Text = "Man Bear Gun"
