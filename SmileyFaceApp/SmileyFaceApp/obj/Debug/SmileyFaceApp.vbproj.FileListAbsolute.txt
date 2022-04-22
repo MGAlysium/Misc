@@ -1,0 +1,14 @@
+C:\Users\22ethananderson\AppData\Local\Temporary Projects\SmileyFaceApp\bin\Debug\SmileyFaceApp.exe.config
+C:\Users\22ethananderson\AppData\Local\Temporary Projects\SmileyFaceApp\bin\Debug\SmileyFaceApp.exe
+C:\Users\22ethananderson\AppData\Local\Temporary Projects\SmileyFaceApp\bin\Debug\SmileyFaceApp.pdb
+C:\Users\22ethananderson\AppData\Local\Temporary Projects\SmileyFaceApp\bin\Debug\SmileyFaceApp.xml
+C:\Users\22ethananderson\AppData\Local\Temporary Projects\SmileyFaceApp\obj\Debug\SmileyFaceApp.frmSmile.resources
+C:\Users\22ethananderson\AppData\Local\Temporary Projects\SmileyFaceApp\obj\Debug\SmileyFaceApp.Resources.resources
+C:\Users\22ethananderson\AppData\Local\Temporary Projects\SmileyFaceApp\obj\Debug\SmileyFaceApp.vbproj.GenerateResource.Cache
+C:\Users\22ethananderson\AppData\Local\Temporary Projects\SmileyFaceApp\obj\Debug\SmileyFaceApp.exe
+C:\Users\22ethananderson\AppData\Local\Temporary Projects\SmileyFaceApp\obj\Debug\SmileyFaceApp.xml
+C:\Users\22ethananderson\AppData\Local\Temporary Projects\SmileyFaceApp\obj\Debug\SmileyFaceApp.pdb
+C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\SmileyFaceApp\SmileyFaceApp\bin\Debug\SmileyFaceApp.exe.config
+C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\SmileyFaceApp\SmileyFaceApp\obj\Debug\SmileyFaceApp.exe
+C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\SmileyFaceApp\SmileyFaceApp\obj\Debug\SmileyFaceApp.xml
+C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\SmileyFaceApp\SmileyFaceApp\obj\Debug\SmileyFaceApp.pdb
