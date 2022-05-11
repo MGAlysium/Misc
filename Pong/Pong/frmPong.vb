@@ -1,12 +1,12 @@
 ﻿Public Class frmPong
-    Dim vx, vy As Single 'x and y vectors for ball
+    Dim vx, vy As Single
 
-    Dim paddleZone As Integer 'section of paddle making contact with ball
-    Dim winScore As Integer = 11 'score that must be attained to win game
-    Dim scoreLeft, scoreRight, lastPoint As Integer 'game scores and last player to score
-    Dim breakCount As Integer = 0 'counter for tmrBreak clock ticks
+    Dim paddleZone As Integer 
+    Dim winScore As Integer = 5
+    Dim scoreLeft, scoreRight, lastPoint As Integer
+    Dim breakCount As Integer = 0 
     Dim intLCourt, intRcourt, intTCourt, intBCourt, intCCourt As Integer
-    Dim intBallW, intBallH As Integer 'ball width and height
+    Dim intBallW, intBallH As Integer
     Dim intPadLH, intPadRH As Integer 'left and right paddle heights
     Dim intPadLTop, intPadRTop As Integer 'initial y coordinate for top of paddles
 
