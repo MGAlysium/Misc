@@ -23,7 +23,6 @@ Partial Class frmPong
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.picPongTable = New System.Windows.Forms.PictureBox()
         Me.lblBall = New System.Windows.Forms.Label()
         Me.lblPaddleLeft = New System.Windows.Forms.Label()
         Me.lblPaddleRight = New System.Windows.Forms.Label()
@@ -37,21 +36,14 @@ Partial Class frmPong
         Me.tmrPaddle = New System.Windows.Forms.Timer(Me.components)
         Me.tmrBreak = New System.Windows.Forms.Timer(Me.components)
         Me.lblControls = New System.Windows.Forms.Label()
+        Me.picPongTable = New System.Windows.Forms.PictureBox()
         CType(Me.picPongTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'picPongTable
-        '
-        Me.picPongTable.Image = Global.Pong.My.Resources.Resources.pong_table
-        Me.picPongTable.Location = New System.Drawing.Point(12, 12)
-        Me.picPongTable.Name = "picPongTable"
-        Me.picPongTable.Size = New System.Drawing.Size(640, 480)
-        Me.picPongTable.TabIndex = 0
-        Me.picPongTable.TabStop = False
-        '
         'lblBall
         '
-        Me.lblBall.BackColor = System.Drawing.Color.White
+        Me.lblBall.BackColor = System.Drawing.Color.Teal
+        Me.lblBall.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblBall.Location = New System.Drawing.Point(324, 244)
         Me.lblBall.Name = "lblBall"
         Me.lblBall.Size = New System.Drawing.Size(16, 16)
@@ -60,7 +52,8 @@ Partial Class frmPong
         '
         'lblPaddleLeft
         '
-        Me.lblPaddleLeft.BackColor = System.Drawing.Color.White
+        Me.lblPaddleLeft.BackColor = System.Drawing.Color.Teal
+        Me.lblPaddleLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblPaddleLeft.Location = New System.Drawing.Point(23, 212)
         Me.lblPaddleLeft.Name = "lblPaddleLeft"
         Me.lblPaddleLeft.Size = New System.Drawing.Size(16, 80)
@@ -68,7 +61,8 @@ Partial Class frmPong
         '
         'lblPaddleRight
         '
-        Me.lblPaddleRight.BackColor = System.Drawing.Color.White
+        Me.lblPaddleRight.BackColor = System.Drawing.Color.Teal
+        Me.lblPaddleRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.lblPaddleRight.Location = New System.Drawing.Point(625, 212)
         Me.lblPaddleRight.Name = "lblPaddleRight"
         Me.lblPaddleRight.Size = New System.Drawing.Size(16, 80)
@@ -77,8 +71,9 @@ Partial Class frmPong
         'lblLeftScore
         '
         Me.lblLeftScore.AutoSize = True
+        Me.lblLeftScore.BackColor = System.Drawing.Color.Silver
         Me.lblLeftScore.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.lblLeftScore.ForeColor = System.Drawing.Color.White
+        Me.lblLeftScore.ForeColor = System.Drawing.Color.Teal
         Me.lblLeftScore.Location = New System.Drawing.Point(210, 40)
         Me.lblLeftScore.Name = "lblLeftScore"
         Me.lblLeftScore.Size = New System.Drawing.Size(35, 37)
@@ -88,8 +83,9 @@ Partial Class frmPong
         'lblRightScore
         '
         Me.lblRightScore.AutoSize = True
+        Me.lblRightScore.BackColor = System.Drawing.Color.Silver
         Me.lblRightScore.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!)
-        Me.lblRightScore.ForeColor = System.Drawing.Color.White
+        Me.lblRightScore.ForeColor = System.Drawing.Color.Teal
         Me.lblRightScore.Location = New System.Drawing.Point(420, 40)
         Me.lblRightScore.Name = "lblRightScore"
         Me.lblRightScore.Size = New System.Drawing.Size(35, 37)
@@ -98,10 +94,10 @@ Partial Class frmPong
         '
         'btnPlay
         '
-        Me.btnPlay.BackColor = System.Drawing.Color.White
+        Me.btnPlay.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnPlay.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnPlay.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPlay.ForeColor = System.Drawing.Color.Black
+        Me.btnPlay.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnPlay.Location = New System.Drawing.Point(334, 507)
         Me.btnPlay.Name = "btnPlay"
         Me.btnPlay.Size = New System.Drawing.Size(75, 23)
@@ -111,10 +107,10 @@ Partial Class frmPong
         '
         'btnPause
         '
-        Me.btnPause.BackColor = System.Drawing.Color.White
+        Me.btnPause.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnPause.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnPause.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPause.ForeColor = System.Drawing.Color.Black
+        Me.btnPause.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnPause.Location = New System.Drawing.Point(415, 507)
         Me.btnPause.Name = "btnPause"
         Me.btnPause.Size = New System.Drawing.Size(75, 23)
@@ -124,10 +120,10 @@ Partial Class frmPong
         '
         'btnReset
         '
-        Me.btnReset.BackColor = System.Drawing.Color.White
+        Me.btnReset.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnReset.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnReset.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReset.ForeColor = System.Drawing.Color.Black
+        Me.btnReset.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnReset.Location = New System.Drawing.Point(496, 507)
         Me.btnReset.Name = "btnReset"
         Me.btnReset.Size = New System.Drawing.Size(75, 23)
@@ -137,7 +133,7 @@ Partial Class frmPong
         '
         'btnExit
         '
-        Me.btnExit.BackColor = System.Drawing.Color.White
+        Me.btnExit.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnExit.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnExit.ForeColor = System.Drawing.Color.Red
@@ -163,33 +159,43 @@ Partial Class frmPong
         'lblControls
         '
         Me.lblControls.AutoSize = True
-        Me.lblControls.BackColor = System.Drawing.Color.Transparent
-        Me.lblControls.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblControls.ForeColor = System.Drawing.Color.White
-        Me.lblControls.Location = New System.Drawing.Point(126, 331)
+        Me.lblControls.BackColor = System.Drawing.Color.Silver
+        Me.lblControls.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblControls.ForeColor = System.Drawing.Color.Teal
+        Me.lblControls.Location = New System.Drawing.Point(355, 77)
         Me.lblControls.Name = "lblControls"
-        Me.lblControls.Size = New System.Drawing.Size(413, 148)
+        Me.lblControls.Size = New System.Drawing.Size(286, 100)
         Me.lblControls.TabIndex = 10
         Me.lblControls.Text = "You Are The Right Paddle" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Left Click = Up" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Right Click = Down"
         Me.lblControls.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'picPongTable
+        '
+        Me.picPongTable.Image = Global.Pong.My.Resources.Resources.pong_table_1_png
+        Me.picPongTable.Location = New System.Drawing.Point(12, 12)
+        Me.picPongTable.Name = "picPongTable"
+        Me.picPongTable.Size = New System.Drawing.Size(640, 480)
+        Me.picPongTable.TabIndex = 0
+        Me.picPongTable.TabStop = False
         '
         'frmPong
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.Black
+        Me.BackColor = System.Drawing.Color.Silver
         Me.ClientSize = New System.Drawing.Size(664, 541)
         Me.Controls.Add(Me.lblControls)
         Me.Controls.Add(Me.btnExit)
         Me.Controls.Add(Me.btnReset)
         Me.Controls.Add(Me.btnPause)
         Me.Controls.Add(Me.btnPlay)
-        Me.Controls.Add(Me.lblRightScore)
-        Me.Controls.Add(Me.lblLeftScore)
         Me.Controls.Add(Me.lblPaddleRight)
         Me.Controls.Add(Me.lblPaddleLeft)
         Me.Controls.Add(Me.lblBall)
+        Me.Controls.Add(Me.lblLeftScore)
+        Me.Controls.Add(Me.lblRightScore)
         Me.Controls.Add(Me.picPongTable)
+        Me.ForeColor = System.Drawing.Color.Teal
         Me.Name = "frmPong"
         Me.Text = "Pong"
         CType(Me.picPongTable, System.ComponentModel.ISupportInitialize).EndInit()

@@ -63,9 +63,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property pong_table() As System.Drawing.Bitmap
+        Friend ReadOnly Property pong_table_1_png() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("pong_table", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("pong_table_1_png", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

@@ -1,19 +1,19 @@
 ﻿Public Class frmPong
     Dim vx, vy As Single
 
-    Dim paddleZone As Integer 
+    Dim paddleZone As Integer
     Dim winScore As Integer = 5
     Dim scoreLeft, scoreRight, lastPoint As Integer
-    Dim breakCount As Integer = 0 
+    Dim breakCount As Integer = 0
     Dim intLCourt, intRcourt, intTCourt, intBCourt, intCCourt As Integer
     Dim intBallW, intBallH As Integer
-    Dim intPadLH, intPadRH As Integer 'left and right paddle heights
-    Dim intPadLTop, intPadRTop As Integer 'initial y coordinate for top of paddles
+    Dim intPadLH, intPadRH As Integer
+    Dim intPadLTop, intPadRTop As Integer
 
-    Dim upFlag As Boolean = False 'True when left mouse button held down
-    Dim dnFlag As Boolean = False 'True when right mouse button held down
+    Dim upFlag As Boolean = False
+    Dim dnFlag As Boolean = False
 
-    Dim intPadFaceL, intPadFaceR 'x coordinates for contact surfaces of left and right paddles
+    Dim intPadFaceL, intPadFaceR
 
     Private Sub frmPong_Load(sender As Object, ByVal e As EventArgs) Handles MyBase.Load
         intLCourt = picPongTable.Left + 5
@@ -35,18 +35,18 @@
         If lblBall.Left < (intCCourt - intBallW / 2) And vx < 0 Then
             If (lblBall.Top + intBallH / 2) > (lblPaddleLeft.Top + intPadLH / 2) Then
                 If (lblPaddleLeft.Top + intPadLH) < intBCourt Then
-                    lblPaddleLeft.Top += 4 'move left paddle down 4 pixels
+                    lblPaddleLeft.Top += 4
                 End If
             ElseIf (lblBall.Top + intBallH / 2) < (lblPaddleLeft.Top + intPadLH / 2) Then
-                If lblPaddleLeft.Top > intTCourt Then 'paddle is not yet at top of court
-                    lblPaddleLeft.Top -= 4 'move left paddle up 4 pixels
+                If lblPaddleLeft.Top > intTCourt Then
+                    lblPaddleLeft.Top -= 4
                 End If
             End If
-        Else 'ball is not in left court or is moving away from left paddle
+        Else
             If lblPaddleLeft.Top < intPadLTop Then
-                lblPaddleLeft.Top += 1 'move paddle down by 1 pixel
+                lblPaddleLeft.Top += 1
             ElseIf lblPaddleLeft.Top > intPadLTop Then
-                lblPaddleLeft.Top -= 1 'move paddle up by 1 pixel
+                lblPaddleLeft.Top -= 1
             End If
         End If
 
@@ -57,9 +57,9 @@
         End If
 
         If upFlag = True And lblPaddleRight.Top > intTCourt Then
-            lblPaddleRight.Top -= 4 'move right paddle up 4 pixels
+            lblPaddleRight.Top -= 4
         ElseIf dnFlag = True And lblPaddleRight.Top < (intBCourt - intPadRH) Then
-            lblPaddleRight.Top += 4 'move right paddle down 4 pixels
+            lblPaddleRight.Top += 4
         End If
 
         If lblPaddleRight.Top < intTCourt Then
@@ -70,8 +70,8 @@
     End Sub
 
     Private Sub tmrBall_Tick(sender As Object, ByVal e As EventArgs) Handles tmrBall.Tick
-        lblBall.Top = lblBall.Top + vy 'move ball up or down by vy pixels
-        lblBall.Left = lblBall.Left + vx 'move ball left or right by vx pixels
+        lblBall.Top = lblBall.Top + vy
+        lblBall.Left = lblBall.Left + vx
 
         If lblBall.Top < intTCourt Then lblBall.Top = intTCourt
 
@@ -79,7 +79,7 @@
 
         If lblBall.Top <= intTCourt Or lblBall.Top >= (intBCourt - intBallH) Then vy = -vy
 
-        If vx < 0 Then 'ball is moving from right to left
+        If vx < 0 Then
             If lblBall.Top > (lblPaddleLeft.Top - intBallH) And lblBall.Top < (lblPaddleLeft.Top + intPadLH) Then
                 If lblBall.Left <= intPadFaceL Then
                     Randomize()
@@ -87,25 +87,25 @@
                     Select Case paddleZone
                         Case 3
                             vy = -5
-                            vx = 2
+                            vx = 5
                         Case 2
                             vy = -4
-                            vx = 3
+                            vx = 6
                         Case 1
                             vy = -3
-                            vx = 4
+                            vx = 7
                         Case 0
                             vy = 0
-                            vx = 5
+                            vx = 8
                         Case -1
                             vy = 3
-                            vx = 4
+                            vx = 7
                         Case -2
                             vy = 4
-                            vx = 3
+                            vx = 6
                         Case -3
                             vy = 5
-                            vx = 2
+                            vx = 5
                     End Select
                 End If
             Else
@@ -113,32 +113,32 @@
                     pointScored()
                 End If
             End If
-        ElseIf vx > 0 Then 'ball is moving from left to right
+        ElseIf vx > 0 Then
             If lblBall.Top > (lblPaddleRight.Top - intBallH) And lblBall.Top < (lblPaddleRight.Top + intPadRH) Then
                 If (lblBall.Left + intBallW) > lblPaddleRight.Left Then
                     getZoneR()
                     Select Case paddleZone
                         Case 3
                             vy = -5
-                            vx = -2
+                            vx = -5
                         Case 2
                             vy = -4
-                            vx = -3
+                            vx = -6
                         Case 1
                             vy = -3
-                            vx = -4
+                            vx = -7
                         Case 0
                             vy = 0
-                            vx = -5
+                            vx = -8
                         Case -1
                             vy = 3
-                            vx = -4
+                            vx = -7
                         Case -2
                             vy = 4
-                            vx = -3
+                            vx = -6
                         Case -3
                             vy = 5
-                            vx = -2
+                            vx = -5
                     End Select
                 End If
             Else
@@ -150,28 +150,28 @@
     End Sub
 
     Private Sub tmrBreak_Tick(sender As Object, ByVal e As EventArgs) Handles tmrBreak.Tick
-        breakCount += 1 'record number of times timer has ticked
+        breakCount += 1
 
-        If breakCount = 1 Then 'this is first timer tick
-            lblPaddleLeft.Top = intPadLTop 'reset left paddle position
-            lblPaddleRight.Top = intPadRTop 'reset right paddle position
-            If lastPoint = 1 Then 'computer won last point
+        If breakCount = 1 Then
+            lblPaddleLeft.Top = intPadLTop
+            lblPaddleRight.Top = intPadRTop
+            If lastPoint = 1 Then
                 lblBall.Top = lblPaddleLeft.Top + intPadLH / 2 - intBallH / 2
-                lblBall.Left = intPadFaceL 'place ball immediately to right of left paddle
-                vx = 5 'set ball's x vector value to 5
-            ElseIf lastPoint = 2 Then 'player won last point
+                lblBall.Left = intPadFaceL
+                vx = 8
+            ElseIf lastPoint = 2 Then
                 lblBall.Top = lblPaddleRight.Top + intPadRH / 2 - intBallH / 2
                 lblBall.Left = intPadFaceR - lblBall.Width
-                vx = -5 'set ball's x vector value to -5
+                vx = -8
             End If
             Randomize()
             vy = (Rnd() * 10) - 5
-        ElseIf breakCount = 2 Then 'this is second timer tick
-            breakCount = 0 'reset timer counter
-            lblBall.Visible = True 'restore visibility of ball
-            tmrBall.Start() 'restart tmrBall
-            tmrPaddle.Start() 'restart tmrPaddle
-            tmrBreak.Stop() 'stop tmrBreak
+        ElseIf breakCount = 2 Then
+            breakCount = 0
+            lblBall.Visible = True
+            tmrBall.Start()
+            tmrPaddle.Start()
+            tmrBreak.Stop()
         End If
     End Sub
 
@@ -179,26 +179,26 @@
         lblControls.Visible = False
         lblBall.Top = lblPaddleRight.Top + intPadRH / 2 - intBallH / 2
         lblBall.Left = intPadFaceR - lblBall.Width
-        lblBall.Visible = True 'make ball visible
-        vx = -5 'set ball's x vector to -5
+        lblBall.Visible = True
+        vx = -8
         Randomize()
         vy = (Rnd() * 10) - 5
-        tmrPaddle.Start() 'start tmrPaddle
-        tmrBall.Start() 'start tmrBall
-        btnPlay.Enabled = False 'disable Start button
+        tmrPaddle.Start()
+        tmrBall.Start()
+        btnPlay.Enabled = False
     End Sub
 
     Private Sub btnPause_Click(sender As Object, ByVal e As EventArgs) Handles btnPause.Click
-        If btnPause.Text = "PAUSE" Then 'game is in progress
+        If btnPause.Text = "PAUSE" Then
             lblControls.Visible = True
-            tmrPaddle.Stop() 'stop tmrPaddle
-            tmrBall.Stop() 'stop tmrBall
-            btnPause.Text = "RESUME" 'change button caption to "Resume"
-        ElseIf btnPause.Text = "RESUME" Then 'game is paused
+            tmrPaddle.Stop()
+            tmrBall.Stop()
+            btnPause.Text = "RESUME"
+        ElseIf btnPause.Text = "RESUME" Then
             lblControls.Visible = False
-            tmrPaddle.Start() 'start tmrPaddle
-            tmrBall.Start() 'start tmrBall
-            btnPause.Text = "PAUSE" 'change button caption to "Pause"
+            tmrPaddle.Start()
+            tmrBall.Start()
+            btnPause.Text = "PAUSE"
         End If
     End Sub
 
@@ -231,29 +231,29 @@
 
     Sub pointScored()
         tmrBall.Stop()
-        tmrPaddle.Stop() 'stop tmrPaddle
-        If lblBall.Left < intPadFaceL Then 'ball has bypassed the left paddle
-            scoreRight = scoreRight + 1 'add 1 to player's score
-            lastPoint = 2 'player won last point
-            lblRightScore.Text = scoreRight 'display new player score
+        tmrPaddle.Stop()
+        If lblBall.Left < intPadFaceL Then
+            scoreRight = scoreRight + 1
+            lastPoint = 2
+            lblRightScore.Text = scoreRight
         ElseIf (lblBall.Left + intBallW) > intPadFaceR Then
-            scoreLeft = scoreLeft + 1 'add 1 to computer's score
-            lastPoint = 1 'computer won last point
-            lblLeftScore.Text = scoreLeft 'display new computer score
+            scoreLeft = scoreLeft + 1
+            lastPoint = 1
+            lblLeftScore.Text = scoreLeft
         End If
 
-        lblBall.Visible = False 'hide ball
+        lblBall.Visible = False
 
-        If scoreLeft = winScore Then 'computer has won game
-            reset() 'call reset game variables and game display
-            MsgBox("Sorry, better luck next time!") 'display consolatory message
-            resetScores() 'reset scores and score display
-        ElseIf scoreRight = winScore Then 'player has won game
-            reset() 'call reset game variables and game display
-            MsgBox("Congratulations!") 'display congratulatory message
-            resetScores() 'reset scores and score display
+        If scoreLeft = winScore Then
+            reset()
+            MsgBox("Sorry, better luck next time!")
+            resetScores()
+        ElseIf scoreRight = winScore Then
+            reset()
+            MsgBox("Congratulations!")
+            resetScores()
         Else
-            tmrBreak.Start() 'game still in progress, start tmrBreak
+            tmrBreak.Start()
         End If
     End Sub
 
@@ -275,18 +275,18 @@
     End Sub
 
     Private Sub frmPong_MouseDown(sender As Object, ByVal e As Windows.Forms.MouseEventArgs) Handles Me.MouseDown, picPongTable.MouseDown
-        If e.Button = MouseButtons.Right Then 'right mouse button is down
-            dnFlag = True 'set dnFlag
-        ElseIf e.Button = MouseButtons.Left Then 'left mouse button is down
-            upFlag = True 'set upFlag
+        If e.Button = MouseButtons.Right Then
+            dnFlag = True
+        ElseIf e.Button = MouseButtons.Left Then
+            upFlag = True
         End If
     End Sub
 
     Private Sub frmPong_MouseUp(sender As Object, ByVal e As Windows.Forms.MouseEventArgs) Handles Me.MouseUp, picPongTable.MouseUp
-        If e.Button = MouseButtons.Right Then 'right mouse button has been released
-            dnFlag = False 'unset dnFlag
-        ElseIf e.Button = MouseButtons.Left Then 'left mouse button has been released
-            upFlag = False 'unset upFlag
+        If e.Button = MouseButtons.Right Then
+            dnFlag = False
+        ElseIf e.Button = MouseButtons.Left Then
+            upFlag = False
         End If
     End Sub
 

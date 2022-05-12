@@ -12,3 +12,9 @@ C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\Pong\Pong\bin\Deb
 C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\Pong\Pong\obj\Debug\Pong.exe
 C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\Pong\Pong\obj\Debug\Pong.xml
 C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\Pong\Pong\obj\Debug\Pong.pdb
+C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\Pong\Pong\bin\Debug\Pong.exe
+C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\Pong\Pong\bin\Debug\Pong.pdb
+C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\Pong\Pong\bin\Debug\Pong.xml
+C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\Pong\Pong\obj\Debug\Pong.frmPong.resources
+C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\Pong\Pong\obj\Debug\Pong.Resources.resources
+C:\Users\22ethananderson\Documents\Visual Studio 2012\Projects\Pong\Pong\obj\Debug\Pong.vbproj.GenerateResource.Cache
